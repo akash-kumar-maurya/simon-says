@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fredoka", system-ui, sans-serif;
+}
+
+body {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2d1b4e, #1a1a2e);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.game {
+  width: min(100%, 440px);
+  padding: clamp(1.25rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.75rem;
+  /* backdrop-filter: blur(10px); */
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.game-header {
+  text-align: center;
+}
+
+.game-header h1 {
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.score {
+  padding: 0.25rem 0.75rem;
+  border-radius: 60rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+}
+
+#status {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  min-height: 3em;
+}
+
+.btn-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+.btn {
+  aspect-ratio: 1; /* always square, scales with the card */
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    filter 0.15s;
+}
+
+.red {
+  background: #ef4444;
+}
+
+.green {
+  background: #22c55e;
+}
+
+.blue {
+  background: #3b82f6;
+}
+
+.yellow {
+  background: #facc15;
+}
+
+.flash {
+  filter: brightness(1.6);
+  box-shadow: 0 0 40px currentColor;
+}
+
+/* Start button (for phones, where "press any key" doesn't work) */
+.start {
+  padding: 0.75rem 2.5rem;
+  border: 0;
+  border-radius: 60rem;
+  font: inherit;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.start:hover {
+  transform: scale(1.05);
+}
+
+.game-over {
+  background: #7f1d1d;
+}
+
+.help-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60rem;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.help-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
