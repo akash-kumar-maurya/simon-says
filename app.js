@@ -52,7 +52,7 @@ function btnPress() {
   checkAns(userSeq.length - 1);
 }
 
-buttons.forEach((btn) => btn.addEventListener("click", btnPress));
+buttons.forEach((btn) => btn.addEventListener("pointerdown", btnPress));
 
 function checkAns(idx) {
   if (userSeq[idx] === gameSeq[idx]) {
@@ -88,15 +88,3 @@ function reset() {
   startBtn.style.display = "";
   startBtn.innerText = "Play Again";
 }
-
-let howToPlay = document.querySelector("#helpBtn");
-howToPlay.addEventListener("click", () => {
-  alert(`How to Play?
-    Press any key (or tap Start) to begin.
-    One color will flash. Click that color.
-    Each level adds one more random color to the pattern.
-    Only the newest color flashes, so you must remember all the
-    earlier ones and repeat the full pattern from the beginning.
-    One wrong click and the game is over.
-    Try to beat your Best score!`);
-});

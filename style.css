@@ -1,14 +1,31 @@
 * {
+  -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Fredoka", system-ui, sans-serif;
 }
 
+.btn,
+.start {
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+.btn:focus,
+.btn:focus-visible,
+.btn:active {
+  outline: none;
+}
+
 body {
   color: #ffffff;
   background: linear-gradient(135deg, #2d1b4e, #1a1a2e);
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
 }
@@ -20,10 +37,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.75rem;
-  /* backdrop-filter: blur(10px); */
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
 }
 
@@ -92,9 +107,20 @@ body {
   background: #facc15;
 }
 
-.flash {
-  filter: brightness(1.6);
-  box-shadow: 0 0 40px currentColor;
+.red.flash {
+  box-shadow: 0 0 40px #ef4444;
+}
+
+.green.flash {
+  box-shadow: 0 0 40px #22c55e;
+}
+
+.blue.flash {
+  box-shadow: 0 0 40px #3b82f6;
+}
+
+.yellow.flash {
+  box-shadow: 0 0 40px #facc15;
 }
 
 /* Start button (for phones, where "press any key" doesn't work) */
@@ -114,22 +140,18 @@ body {
   transform: scale(1.05);
 }
 
-.game-over {
-  background: #7f1d1d;
-}
+@media (max-width: 600px) {
+  body {
+    min-height: 100dvh;
+    place-items: stretch;
+  }
 
-.help-btn {
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 60rem;
-  background: transparent;
-  color: #ffffff;
-  font: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.help-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  .game {
+    width: 100%;
+    min-height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    justify-content: center;
+  }
 }
